@@ -1,0 +1,150 @@
+.principal-container-usercard{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(87, 48, 102, 0.397);
+    background-color: rgba(126, 49, 126, 0.089);
+}
+
+.principal-container-usercard {
+  /* Propriedade para desfoque do fundo (suporte moderno + safari) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Demais estilos do container */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.top-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.top-container h2{
+    font-size: 33px;
+    color: #200537;
+}
+
+.top-container p{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #442b5a
+}
+
+.top-container button{
+    background-color: transparent;
+    text-decoration:underline;
+    border: none;
+    font-size: 16px;
+    color: #442b5a;
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.fields{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.input-style{
+    background-color: transparent;
+    border: 1px solid #624778;
+    border-radius: 50px;
+    padding: 14px 16px;
+    outline: none;
+    width: 100%;
+    color: #200537;
+    font-size: 16px;
+}
+
+.input-label{
+    position: absolute;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s ease all;
+    color: #e7ddff;
+    font-size: 15px;
+    background-color: #624778;
+    border-radius: 50px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    width: 135px;
+    top: 0;
+    left: 0;
+    transition: left 0.5s ease;
+}
+
+.input-style:focus ~ .input-label,
+.input-style:valid ~ .input-label{
+    left: -140px;
+}
+
+.btn_form{
+    background-color: #f7f4fe;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #624778;
+    overflow: hidden;   
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+}
+
+.btn_form::before {
+  content: "";
+  position: absolute;
+  top: -110%;             /* começa escondido acima do botão */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #200537;
+  z-index: -1;             /* fica atrás do texto do botão */
+  transition: top 0.3s ease-in-out;
+}
+
+.btn_form:hover {
+  cursor: pointer;
+  color: #fff;             /* texto muda de cor quando o fundo roxo cobre */
+}
+
+.btn_form.is-active::before {
+  top: 0;
+}
+
+.btn_form.is-active {
+  color: #fff;
+}
